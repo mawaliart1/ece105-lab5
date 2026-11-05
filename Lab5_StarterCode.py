@@ -3,8 +3,8 @@ from functools import lru_cache
 import matplotlib.pyplot as plt
 
 """
-YOUR FULL NAME HERE
-YOUR STUDENT ID HERE
+Al Ayham AL Mawali
+14764433
 
 ASSIGNMENT: COMPLETE length, peak, champion, and pmf_cdf below
 """
@@ -65,13 +65,17 @@ length(6) is 9 and peak(6) is 16
 @lru_cache(maxsize=None)
 def length(n):
     # the base case, then the recursive case (replace return 0)
-    return 0
+    if n == 1:
+        return 1
+    return 1 + length(c(n))
 
 # Largest number in the Collatz sequence from n >= 1
 @lru_cache(maxsize=None)
 def peak(n):
     # the base case, then the recursive case (replace return 0)
-    return 0
+    if n == 1:
+        return 1
+    return max(n, peak(c(n)))
 
 """
 COMPLETE (#2):
